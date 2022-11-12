@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: Movie Recommendation Engine Frontend
+  description: Movie Recommendation Engine Frontend
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /movies:
+    get:
+      operationId: getMovies
+      tags:
+        - Movies
+      summary: Get movies that fulfill given criteria
+      description: Get movies that fulfill given criteria
+      parameters:
+        - name: name
+          in: query
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Movie'
+components:
+  schemas:
+    Movie:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        title:
+          type: string
+      required:
+        - id
+        - title
