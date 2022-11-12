@@ -70,6 +70,14 @@ tasks.register("generateKotlinServer", GenerateTask::class) {
     )
 }
 
+//tasks.register("generateTypescriptClient", GenerateTask::class) {
+//    generatorName.set("typescript-angular")
+//    modelNameSuffix.set("DTO")
+//
+//    inputSpec.set("$rootDir/src/main/resources/api/frontend-api.yaml")
+//    outputDir.set("$rootDir/../movie-re-app/src/app/generated/")
+//}
+
 tasks.register("generateTypescriptClient", GenerateTask::class) {
     generatorName.set("typescript-fetch")
     modelNameSuffix.set("DTO")

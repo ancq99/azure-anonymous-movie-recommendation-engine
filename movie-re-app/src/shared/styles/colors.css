@@ -1,0 +1,37 @@
+@tailwind base;
+
+@layer base {
+
+    .bg-white-alpha-800 {
+        @apply bg-[#FFFFFFCC]
+    }
+
+    .bg-white-alpha-700 {
+        @apply bg-[#FFFFFFAA]
+    }
+
+    .bg-white-alpha-600 {
+        @apply bg-[#FFFFFF88]
+    }
+
+    .bg-white-alpha-500 {
+        @apply bg-[#FFFFFF6A]
+    }
+
+    .bg-white-alpha-400 {
+        @apply bg-[#FFFFFF50]
+    }
+
+    .bg-white-alpha-300 {
+        @apply bg-[#FFFFFF40]
+    }
+
+    .bg-white-alpha-200 {
+        @apply bg-[#FFFFFF25]
+    }
+
+    .bg-white-alpha-100 {
+        @apply bg-[#FFFFFF14]
+    }
+
+}

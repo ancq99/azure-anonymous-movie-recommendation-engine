@@ -1,0 +1,48 @@
+@import "colors.css";
+@tailwind components;
+
+@layer components {
+
+    .center {
+        @apply flex justify-center items-center;
+    }
+
+    .v-stack {
+        @apply flex justify-start items-center flex-col;
+    }
+
+    .h-stack {
+        @apply flex justify-start items-center flex-row;
+    }
+
+    .h-stack > * {
+        @apply mx-1;
+    }
+
+    .card-sm {
+        @apply flex justify-center items-center rounded-lg bg-white-alpha-400 px-2 py-1.5;
+    }
+
+    .card-md {
+        @apply flex justify-center items-center rounded-2xl bg-white-alpha-400 px-3 py-2;
+    }
+
+    .btn-md {
+        @apply py-1 px-3 h-6 rounded-md text-base;
+    }
+
+    .btn-icon {
+        @apply px-2 py-2 h-6 rounded-md font-extrabold;
+        @apply hover:cursor-pointer hover:bg-white-alpha-400;
+        @apply center;
+    }
+
+    .btn-success {
+        @apply bg-green-600;
+    }
+
+    .text-input-md {
+        @apply border-2 border-white bg-[#00000022] rounded-md py-0.5 px-1.5 text-lg;
+    }
+
+}
