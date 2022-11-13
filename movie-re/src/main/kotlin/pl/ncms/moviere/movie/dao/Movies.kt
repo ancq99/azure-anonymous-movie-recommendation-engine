@@ -23,6 +23,6 @@ object Movies : Table() {
 }
 
 fun initMovies() = transaction {
-    SchemaUtils.drop(Movies)
-    SchemaUtils.create(Movies)
+//    SchemaUtils.drop(Movies)
+//    SchemaUtils.create(Movies)
 }

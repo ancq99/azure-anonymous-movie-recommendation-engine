@@ -1,42 +1,48 @@
-import {Component, createSignal, For} from "solid-js";
+import {Component, For, Show} from "solid-js";
 import {MovieDTO} from "../generated";
 import {createStore} from "solid-js/store";
 import {MovieSearchList} from "../shared/components/movie/MovieSearchList";
-import {Card} from "../shared/components/utils/Card";
-import {Popup} from "../shared/components/utils/Popup";
+import {MovieCard} from "../shared/components/movie/MovieCard";
 
 export const MoviesPage: Component = () => {
     const [viewedMovies, setViewedMovies] = createStore<MovieDTO[]>([]);
-    const [addMovieOpen, setAddMovieOpen] = createSignal(false)
 
     const addMovie = (movie: MovieDTO) => {
-        setAddMovieOpen(false);
         setViewedMovies([...viewedMovies, movie]);
     }
 
     return (
-        <div class="v-stack w-screen min-h-[20em] py-10">
+        <div class="w-screen mx-auto h-screen overflow-y-auto flex flex-col justify-start">
 
-            <p class="text-3xl font-bold">Please add movies you have watched:</p>
-            <div class="flex justify-center">
-                <For each={viewedMovies}>
-                    {item =>
-                        <Card class="m-2">
-                            <span class='text-center text-xl'>{item.title}</span>
-                        </Card>
-                    }
-                </For>
-                <Card class="hover:cursor-pointer m-2" onClick={() => setAddMovieOpen(true)}>
-                    <span class='text-center text-3xl font-extrabold'>+</span>
-                </Card>
+            <div class='h-5/6 w-3/4 mx-auto'>
+                <MovieSearchList addMovie={addMovie}/>
             </div>
 
-            <Popup onClose={() => setAddMovieOpen(false)}
-                   isOpen={addMovieOpen()}>
-                <div class="center mt-4">
-                    <MovieSearchList addMovie={addMovie}/>
+            <div class='h-1/6 px-2 v-stack bg-gray-800 border-t-2 border-t-white'>
+                <p class="text-2xl font-bold">Movies you like:</p>
+
+                <div class='w-full h-stack'>
+                    <Show when={viewedMovies.length > 0}
+                          fallback={<p class='text-2xl flex-grow-[5]'>It is empty here please add something from movie
+                              list</p>}
+                    >
+
+                        <div class="w-5/6 flex justify-start flex-row overflow-x-auto">
+                            <For each={viewedMovies}>
+                                {item => <MovieCard movie={item} mode={'simplified'}/>}
+                            </For>
+                        </div>
+                    </Show>
+
+                    <div class='flex-grow-[2]'/>
+                    <button class='btn-success btn-xl text-2xl font-extrabold m-2'>
+                        Go
+                    </button>
                 </div>
-            </Popup>
+
+
+            </div>
+
         </div>
     )
 }

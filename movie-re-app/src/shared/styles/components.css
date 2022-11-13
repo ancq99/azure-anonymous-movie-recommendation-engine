@@ -28,7 +28,11 @@
     }
 
     .btn-md {
-        @apply py-1 px-3 h-6 rounded-md text-base;
+        @apply px-4 h-7 rounded-md text-base;
+    }
+
+    .btn-xl {
+        @apply px-8 my-auto h-12 rounded-md text-base;
     }
 
     .btn-icon {

@@ -27,6 +27,30 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Movie'
+  /movies/recomentations:
+    post:
+      operationId: recommendMovies
+      tags:
+        - Movies
+      description: Get movies recommendations
+      summary: Get movies recommendations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Movie'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Movie'
+
 components:
   schemas:
     Movie:

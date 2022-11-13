@@ -13,9 +13,22 @@ class MoviesApiController : MoviesApi {
     private val movieDao = MovieDAO.provide()
 
     override fun getMovies(name: String?): ResponseEntity<List<MovieDTO>> {
-        val movies = movieDao.getAll().map { it.toDTO() }
+        val movies: List<MovieDTO> = if (name == null) {
+            movieDao.getAll().map { it.toDTO() }
+        } else {
+            movieDao.findByTitleLike(name).map { it.toDTO() }
+        }
 
         return ResponseEntity.ok(movies)
+    }
+
+    private var cache: List<MovieDTO>? = null
+    override fun recommendMovies(movieDTO: List<MovieDTO>?): ResponseEntity<List<MovieDTO>> {
+        if (cache == null) {
+            cache = movieDao.getAll().subList(0, 10).map { it.toDTO() }
+        }
+
+        return ResponseEntity.ok(cache)
     }
 
     init {

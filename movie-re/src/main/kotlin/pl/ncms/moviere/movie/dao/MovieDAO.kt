@@ -1,14 +1,13 @@
 package pl.ncms.moviere.movie.dao
 
-import org.jetbrains.exposed.sql.ResultRow
+import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
-import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.select
-import org.jetbrains.exposed.sql.selectAll
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.like
 import org.jetbrains.exposed.sql.transactions.transaction
 import pl.ncms.moviere.config.CrudDAO
 import pl.ncms.moviere.config.Provider
 import pl.ncms.moviere.movie.Movie
+import java.util.*
 
 interface MovieDAO : CrudDAO<Movie, Int> {
 
@@ -17,6 +16,8 @@ interface MovieDAO : CrudDAO<Movie, Int> {
             return StdMovieDao()
         }
     }
+
+    fun findByTitleLike(title: String): List<Movie>
 
 }
 
@@ -42,12 +43,17 @@ class StdMovieDao : MovieDAO {
     }
 
     override fun getAll(): List<Movie> = transaction {
-        Movies.selectAll().map(this@StdMovieDao::mapToObj)
+        Movies.selectAll().map { mapToObj(it) }
     }
 
-    override fun get(id: Int): Movie? {
-        val row = Movies.select(Movies.id eq id).single()
-        return mapToObj(row)
+    override fun get(id: Int): Movie? = transaction {
+        val row = Movies.select(Movies.id eq id).singleOrNull()
+        row?.let { mapToObj(it) }
+    }
+
+    override fun findByTitleLike(title: String): List<Movie> = transaction {
+        Movies.select(UpperCase(Movies.title) like "%${title.uppercase(Locale.getDefault())}%")
+            .map { mapToObj(it) }
     }
 
     private fun mapToObj(row: ResultRow): Movie {
