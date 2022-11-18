@@ -14,7 +14,7 @@ Plik z dump'em bazy znajduje się tutaj: [dump](https://drive.google.com/file/d/
 3. PObieramy plik dump
 4. Uruchamiamy polecenie w terminalu:
 ```
-pg_restore -v --no-owner --host=mydemoserver.postgres.database.azure.com --port=5432 --username=mylogin --dbname=mypgsqldb testdb.dump
+pg_restore -v --no-owner --host=mydemoserver.postgres.database.azure.com --port=5432 --username=mylogin --dbname=mypgsqldb azure.dump
 ```
 5. Gotowe. Po wykonaniu polecenia dane zostały załadowe do utworzonej w kroku pierwszym bazy
 
