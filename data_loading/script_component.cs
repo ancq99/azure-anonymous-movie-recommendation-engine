@@ -213,7 +213,7 @@ public class ScriptMain : UserComponent
                         Dictionary<string, object> tmpCast = (Dictionary<string, object>)cast.ElementAt(i).Value;
 
                         CastListBuffer.AddRow();
-                        CastListBuffer.CastDimFK = id + 1;
+                        CastListBuffer.CastDimFK = id;
 
                         var test1 = tmpCast.ElementAt(0).Value;
                         if (test1 == null)
