@@ -2,7 +2,14 @@ import numpy as np
 import pandas as pd
 
 
-def recommendation(title: list, similarity, indices):
+# import scipy.sparse
+
+def recommendation(title: pd.DataFrame):
+    data = pd.read_parquet("distance_between_movies.parquet")
+    indices = pd.DataFrame({'title': data.columns, 'index_distance': data.index}).drop_duplicates(keep='last')
+
+    similarity = data.values
+
     index = list(indices[indices['title'].isin(title)]['index_distance'])
 
     sum_index_distance = np.sum(similarity[index], axis=0).reshape(-1,
@@ -18,18 +25,9 @@ def recommendation(title: list, similarity, indices):
     return [indices[indices['index_distance'] == index_distance]['title'].values[0] for index_distance in movie_indices]
 
 
-def load_distance_between_movies():
-    similarity = np.load("distance_between_movies.npy", )
-
-    indices = pd.read_csv("movies_indices.csv", )
-    indices.columns = ['title', 'index_distance']
-    return similarity, indices
-
-
 if __name__ == "__main__":
-    title = ['Harry Potter and the Order of the Phoenix']
-    similarity, indices = load_distance_between_movies()
-    print(recommendation(title, similarity, indices))
+    title = pd.DataFrame({'title': ['Harry Potter and the Order of the Phoenix']})
 
-    title = ['Harry Potter and the Order of the Phoenix', 'Harry Potter and the Half-Blood Prince']
-    print(recommendation(title, similarity, indices))
+    data = pd.read_parquet("https://azuremachinele8230842786.blob.core.windows.net/azureml-blobstore-06d4a1a7-8a72-4950-8f78-b26adba1d0f4/UI/2022-11-19_145658_UTC/distance_between_movies.parquet?sp=r&st=2022-11-19T16:10:10Z&se=2022-11-20T00:10:10Z&spr=https&sv=2021-06-08&sr=b&sig=oSY8zu%2Fm2299sCC9FU%2F9oPrpO56CXMtuZWu%2FOb7kDlc%3D")
+
+    print(data)
