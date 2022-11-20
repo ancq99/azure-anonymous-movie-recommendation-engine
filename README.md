@@ -1,3 +1,3 @@
 # azure-movie-recommendation-engine
 
-![obraz](https://user-images.githubusercontent.com/66008982/202915475-c850f6a4-7002-48c1-97d1-a3e2a9b1c5d9.png)
+![obraz](https://user-images.githubusercontent.com/66008982/202915524-e50b310a-4e30-461d-9445-f66ef70cb3c4.png)
