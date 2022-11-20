@@ -19,7 +19,7 @@ def dbConn():
     global csr_data
 
     conn = psycopg2.connect(
-        host="movie-warehouse.postgres.database.azure.com", dbname="warehouse", user="ancq", password="997xXFsu", sslmode="require"
+        host="movie-warehouse.postgres.database.azure.com", dbname="warehouse", user="...", password="...", sslmode="require"
     )
     print("connected to db")
     sql = """
