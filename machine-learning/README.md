@@ -6,6 +6,8 @@ W notatniku należy zmienić dwie wartości:
 * paramerty połaczenia do bazy danych 
 * oraz run_id do odczytania w Azure (ML Studio -> Jobs -> Output and logs -> model -> MLModel)
 
+W przypadku, gdy nie chcemy uczyc całego modelu od zera, możemy załadować plik pickle, dostępny do pobrania [tutaj](https://drive.google.com/file/d/1g8IKrn-Cu8QdE9GbggBJZQ-iHeQLQKu8/view?usp=sharing). 
+Załadopwać go do notatnika i przejść od razu do wdrożenia. 
 
 # Tworzenie Endpointu 
 W MLStudio tworzymy nowy AKS o pamięci conajmnioej 24Gb. 
