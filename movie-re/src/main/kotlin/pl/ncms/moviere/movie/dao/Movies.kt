@@ -1,8 +1,6 @@
 package pl.ncms.moviere.movie.dao
 
-import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.Table
-import org.jetbrains.exposed.sql.transactions.transaction
 
 object Movies : Table() {
     val id = integer("movie_id").autoIncrement()
@@ -20,9 +18,4 @@ object Movies : Table() {
 
     override val primaryKey = PrimaryKey(id, name = "PK_MOVIES_ID")
 
-}
-
-fun initMovies() = transaction {
-//    SchemaUtils.drop(Movies)
-//    SchemaUtils.create(Movies)
 }

@@ -1,32 +1,22 @@
 package pl.ncms.moviere.config.db
 
 import org.jetbrains.exposed.sql.Database
-import org.jetbrains.exposed.sql.SchemaUtils
-import org.jetbrains.exposed.sql.vendors.PostgreSQLDialect
 import org.springframework.context.annotation.Configuration
-import pl.ncms.moviere.movie.dao.initCrew
-import pl.ncms.moviere.movie.dao.initMovies
-
+import pl.ncms.moviere.config.EnvConfig
 @Configuration
 class DBConfig {
 
     init {
         connect()
-        init()
     }
 
     private final fun connect() {
         Database.connect(
-            url = "jdbc:postgresql://localhost:5432/postgres",
+            url = "jdbc:postgresql://${EnvConfig.dbHost}/${EnvConfig.dbDatabase}",
             driver = "org.postgresql.Driver",
-            user = "postgres",
-            password = "123"
+            user = EnvConfig.dbUsername,
+            password = EnvConfig.dbPassword,
         )
-    }
-
-    private final fun init() {
-        initMovies()
-        initCrew()
     }
 
 }

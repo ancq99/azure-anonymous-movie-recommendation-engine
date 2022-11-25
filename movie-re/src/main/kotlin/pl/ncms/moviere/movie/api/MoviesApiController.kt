@@ -2,15 +2,19 @@ package pl.ncms.moviere.movie.api
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.client.RestTemplate
 import pl.ncms.moviere.generated.api.MoviesApi
 import pl.ncms.moviere.generated.model.MovieDTO
 import pl.ncms.moviere.movie.Movie
 import pl.ncms.moviere.movie.dao.MovieDAO
+import pl.ncms.moviere.recomendation.RecommendationEngineApi
+import pl.ncms.moviere.recomendation.RecommendationEngineClient
 
 @RestController
 class MoviesApiController : MoviesApi {
 
     private val movieDao = MovieDAO.provide()
+    private val recommendationApi = RecommendationEngineApi.provide()
 
     override fun getMovies(name: String?): ResponseEntity<List<MovieDTO>> {
         val movies: List<MovieDTO> = if (name == null) {
@@ -22,18 +26,14 @@ class MoviesApiController : MoviesApi {
         return ResponseEntity.ok(movies)
     }
 
-    private var cache: List<MovieDTO>? = null
     override fun recommendMovies(movieDTO: List<MovieDTO>?): ResponseEntity<List<MovieDTO>> {
-        if (cache == null) {
-            cache = movieDao.getAll().subList(0, 10).map { it.toDTO() }
+        if (movieDTO == null) {
+            return ResponseEntity.badRequest().build()
         }
 
-        return ResponseEntity.ok(cache)
-    }
-
-    init {
-        movieDao.create(Movie(0, "Start wars"))
-        movieDao.create(Movie(0, "Start wars 2"))
+        return ResponseEntity.ok(
+            recommendationApi.getRecommendations(movieDTO)
+        )
     }
 
 }

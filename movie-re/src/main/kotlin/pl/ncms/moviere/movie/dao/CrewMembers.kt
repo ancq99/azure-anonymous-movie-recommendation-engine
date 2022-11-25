@@ -15,7 +15,3 @@ class CrewMembers : Table(name = "castlist") {
     override val primaryKey = PrimaryKey(id, name = "PK_CREW_ID")
 
 }
-
-fun initCrew() = transaction {
-
-}

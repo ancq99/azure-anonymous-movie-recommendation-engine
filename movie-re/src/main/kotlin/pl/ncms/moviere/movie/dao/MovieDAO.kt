@@ -2,6 +2,7 @@ package pl.ncms.moviere.movie.dao
 
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.greater
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.like
 import org.jetbrains.exposed.sql.transactions.transaction
 import pl.ncms.moviere.config.CrudDAO
@@ -18,6 +19,8 @@ interface MovieDAO : CrudDAO<Movie, Int> {
     }
 
     fun findByTitleLike(title: String): List<Movie>
+
+    fun findByTitle(title: String): List<Movie>
 
 }
 
@@ -47,12 +50,29 @@ class StdMovieDao : MovieDAO {
     }
 
     override fun get(id: Int): Movie? = transaction {
-        val row = Movies.select(Movies.id eq id).singleOrNull()
+        val row = Movies.select(
+            (Movies.id eq id) and
+                    (Movies.numOfVotes greater 150)
+        )
+            .singleOrNull()
+
         row?.let { mapToObj(it) }
     }
 
     override fun findByTitleLike(title: String): List<Movie> = transaction {
-        Movies.select(UpperCase(Movies.title) like "%${title.uppercase(Locale.getDefault())}%")
+        val titleLike = title.uppercase(Locale.getDefault())
+        Movies.select(
+            UpperCase(Movies.title) like "%${titleLike}%"
+                    and (Movies.numOfVotes greater 150)
+        )
+            .map { mapToObj(it) }
+    }
+
+    override fun findByTitle(title: String): List<Movie> = transaction {
+        Movies.select(
+            Movies.title eq title and
+                    (Movies.numOfVotes greater 150)
+        )
             .map { mapToObj(it) }
     }
 
