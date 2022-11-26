@@ -4,8 +4,8 @@ Prosta applikacja webowa do rekomendacji filmów.
 # Opis działa  projektu 
 Użytkownik podaje filmy, które mu się podobałają a nastepnie strona zwraca przynajmniej 10 propozycji filmów do obejrzania.
 
-# Przykład
-![link](https://www.youtube.com/watch?v=BDy3EB7fzNY)
+# Link do przykładu
+[Przykład_zastowania](https://www.youtube.com/watch?v=BDy3EB7fzNY)
 
 
 # Opis funkcjanalności 
