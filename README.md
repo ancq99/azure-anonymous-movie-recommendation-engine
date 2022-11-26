@@ -7,22 +7,24 @@ Użytkownik podaje filmy, które mu się podobałają a nastepnie strona zwraca 
 
 ![obraz](https://user-images.githubusercontent.com/66008982/202915524-e50b310a-4e30-461d-9445-f66ef70cb3c4.png)
 
-# Link do filmu
-
 
 # Opis funkcjanalności 
 - Prosta, szybka aplikacja webowa bez logowania. 
 - Do rekomendacji wystarczy podać chociaż jeden film. 
 - Program działający w chmurze Azura. 
 
-# azure-movie-recommendation-engine
+?# azure-movie-recommendation-engine
+# Schemat
 
 ![obraz](https://user-images.githubusercontent.com/66008982/202915524-e50b310a-4e30-461d-9445-f66ef70cb3c4.png)
 
 
 
 # Opis projektu 
-- Projektu składał się z dwóch cześci z aplikacji webowej oraz modelu. Aplikacja webowa została napisana w kotlinie, nastepnie hostowania w Azure Web app ( wiecej w [a relative link](other_file.md)) natomiast model został napisyny w Pythonie i udostepniony w Azure Kunernetes Service ( wiecej w [a relative link](machine_learning/README.md)). 
+Projektu składał się z trzech cześci:
+- załadowanie filmów do bazy [data_loading/README](data_loading/README.md) 
+- aplikacji webowej [movie-re-app/README](movie-re-app/README.md) 
+- modelu rekomendacji  [machine-learning/README](machine-learning/README.md) 
 
 
 # Wybrane stos technologiczny
