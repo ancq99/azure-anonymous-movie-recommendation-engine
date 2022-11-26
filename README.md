@@ -4,8 +4,8 @@ Prosta applikacja webowa do rekomendacji filmów.
 # Opis działa  projektu 
 Użytkownik podaje filmy, które mu się podobałają a nastepnie strona zwraca przynajmniej 10 propozycji filmów do obejrzania.
 
-
-![obraz](https://user-images.githubusercontent.com/66008982/202915524-e50b310a-4e30-461d-9445-f66ef70cb3c4.png)
+# Przykład
+![link](https://www.youtube.com/watch?v=BDy3EB7fzNY)
 
 
 # Opis funkcjanalności 
@@ -13,7 +13,7 @@ Użytkownik podaje filmy, które mu się podobałają a nastepnie strona zwraca 
 - Do rekomendacji wystarczy podać chociaż jeden film. 
 - Program działający w chmurze Azura. 
 
-?# azure-movie-recommendation-engine
+
 # Schemat
 
 ![obraz](https://user-images.githubusercontent.com/66008982/202915524-e50b310a-4e30-461d-9445-f66ef70cb3c4.png)
