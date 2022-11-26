@@ -2,7 +2,7 @@
 Prosta applikacja webowa do rekomendacji filmów.
 
 # Opis działa  projektu 
-Użytkownik podaje filmy, które mu się podobałają a nastepnie strona zwraca mu 10 propozycji filmów do obejrzania.
+Użytkownik podaje filmy, które mu się podobałają a nastepnie strona zwraca przynajmniej 10 propozycji filmów do obejrzania.
 
 
 ![obraz](https://user-images.githubusercontent.com/66008982/202915524-e50b310a-4e30-461d-9445-f66ef70cb3c4.png)
@@ -22,7 +22,7 @@ Użytkownik podaje filmy, które mu się podobałają a nastepnie strona zwraca 
 
 
 # Opis projektu 
-- Projektu składał się z dwóch cześci z aplikacji webowej oraz modelu. Aplikacja webowa została napisana w kotlinie, nastepnie hostowania w Azure Web app natomiast model został napisyny w Pythonie i udostepniony w Azure Kunernetes Service. Wiecej o modelu rekomendacji filmów można przeczytać w ![link][machine_learning/README.md]
+- Projektu składał się z dwóch cześci z aplikacji webowej oraz modelu. Aplikacja webowa została napisana w kotlinie, nastepnie hostowania w Azure Web app ( wiecej w [a relative link](other_file.md)) natomiast model został napisyny w Pythonie i udostepniony w Azure Kunernetes Service ( wiecej w [a relative link](machine_learning/README.md)). 
 
 
 # Wybrane stos technologiczny
