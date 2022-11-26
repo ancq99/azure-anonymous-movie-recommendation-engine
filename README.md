@@ -28,10 +28,10 @@ Projektu składał się z trzech cześci:
 
 
 # Wybrane stos technologiczny
-- Azure postgres - Baza filmów oraz oceń uzytkowników z IMD.
-- Azure machine learning studio - Tworzenie endpointu z modelem rekomendacji. 
+- Azure PostgreSQL - Baza filmów oraz oceń uzytkowników z IMD.
+- Microsoft Azure Machine Learning Studio - Tworzenie endpointu z modelem rekomendacji. 
 - Azure Kubernetes Service - Api modelu rekomendacji.
-- Azure Web app - Aplikacja webowa. 
+- Azure Web App - Aplikacja webowa. 
 
 
 
