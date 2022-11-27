@@ -1,7 +1,7 @@
 import {Component} from "solid-js";
 import {MovieDTO} from "../generated";
 import {createStore} from "solid-js/store";
-import {Route, Routes, useNavigate} from "@solidjs/router";
+import {A, Route, Routes, useNavigate} from "@solidjs/router";
 import {MoviePickerPage} from "./movies/MoviePickerPage";
 import {MovieRecommendationsPage} from "./movies/MovieRecommendationsPage";
 
@@ -16,7 +16,7 @@ export const MoviesPage: Component = () => {
 
     return <>
         <Routes>
-            <Route path="/" element={<a href="/pick-movies">Pick</a>}/>
+            <Route path="/" element={<A href="/pick-movies">Pick</A>}/>
             <Route path="/pick-movies" element={
                 <MoviePickerPage viewedMovies={viewedMovies}
                                  addMovie={addMovie}

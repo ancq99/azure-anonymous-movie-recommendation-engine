@@ -1,5 +1,5 @@
 import {Configuration, MoviesApi} from "../generated";
 
-const apiConfiguration = new Configuration({basePath: "http://localhost:8080"})
+const apiConfiguration = new Configuration({basePath: ""})
 
 export const MoviesApiClient = new MoviesApi(apiConfiguration);
