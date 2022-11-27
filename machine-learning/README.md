@@ -1,3 +1,9 @@
+# Opis 
+
+Naszym pierwotnym pomysłem było zostosowanie modelu Wide and Deep, jednak mieliśmy z nim sporo problemów. Dwa główne problmey to: bardzo słaba dokumentacja oraz zwracanie w wyniku predykcji ciągle tych samych filmów, niezależnie od danych na wejsciu. 
+
+W związku z tym, postawiliśmy na prostsze roziązanie, a mianiownicie KNN. Model ten nie jest idealny, ale zwraca filmy, które rzeczywiscie mogą się podobać na podstawie danych wejściowych, a takie było założenie projektu. 
+
 # Tworzenie modelu
 
 W tym celu należy uruchomić notebook model. W wyniku jego działania zostanie utworzony plik pickle, oraz w Azure powstanie nowy eksperyment, środowisko oraz model. 
