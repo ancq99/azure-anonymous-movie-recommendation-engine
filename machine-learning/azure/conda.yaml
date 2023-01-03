@@ -1,22 +1,19 @@
 channels:
 - conda-forge
 dependencies:
-- postgresql
 - python=3.8.15
 - pip<=20.2.4
 - pip:
   - mlflow
   - cloudpickle==2.2.0
   - psutil==5.8.0
-  - scikit-learn==1.1.3
   - typing-extensions==4.3.0
-  - pandas 
+  - pandas
   - numpy
   - joblib
-  - scipy
-  - psycopg2
   - azureml
+  - azure-storage-blob
   - azureml-core
   - azureml-defaults
 
-name: mlflow-env
+name: mlflow-en
