@@ -13,9 +13,13 @@ W przypadku, gdy nie chcemy uczyc całego modelu od zera, możemy załadować pl
 Załadopwać go do notatnika i przejść od razu do rejestracji. 
 
 # Tworzenie Endpointu 
-W MLStudio tworzymy nowy AKS. 
+W MLStudio tworzymy nowy ASK. 
 
-![obraz](https://user-images.githubusercontent.com/66008982/202914257-090f4f18-1483-4c38-9236-fae8fb5d1342.png)
+![askcompute](https://user-images.githubusercontent.com/57688356/210434701-50b86d27-6cfc-4edc-b96b-c2b4e6869f42.png)
+
+Wybieramy maszyne.
+
+![endpoint_azure](https://user-images.githubusercontent.com/57688356/210434264-c03b3b8f-4c83-4cc9-8d9f-10c0b28d7fd5.png)
 
 
 Następnie przechodzimy do zakładki Models, wybiermay stworzony model (model_rec) i klikamy Deploy.
