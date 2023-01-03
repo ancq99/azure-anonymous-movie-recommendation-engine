@@ -1,6 +1,5 @@
 package pl.ncms.moviere.recomendation
 
-import org.springframework.core.ParameterizedTypeReference
 import org.springframework.http.MediaType
 import org.springframework.http.RequestEntity
 import org.springframework.web.client.RestTemplate
@@ -10,7 +9,7 @@ import pl.ncms.moviere.generated.model.MovieDTO
 import pl.ncms.moviere.movie.api.toDTO
 import pl.ncms.moviere.movie.dao.MovieDAO
 
-interface RecommendationEngineApi {
+interface RecommendationEngineApi : RecommendationEngine {
 
     companion object : Provider<RecommendationEngineApi> {
 
@@ -24,7 +23,7 @@ interface RecommendationEngineApi {
 
     }
 
-    fun getRecommendations(movies: List<MovieDTO>): List<MovieDTO>
+    override fun recommend(movies: List<MovieDTO>): List<MovieDTO>
 
 }
 
@@ -34,7 +33,7 @@ class RecommendationEngineClient(
     private val movieRepo: MovieDAO
 ) : RecommendationEngineApi {
 
-    override fun getRecommendations(movies: List<MovieDTO>): List<MovieDTO> {
+    override fun recommend(movies: List<MovieDTO>): List<MovieDTO> {
         val response = httpClient.exchange(
             RequestEntity.post(url)
                 .contentType(MediaType.APPLICATION_JSON)

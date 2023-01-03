@@ -3,6 +3,7 @@ package pl.ncms.moviere.config.db
 import org.jetbrains.exposed.sql.Database
 import org.springframework.context.annotation.Configuration
 import pl.ncms.moviere.config.EnvConfig
+
 @Configuration
 class DBConfig {
 

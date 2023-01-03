@@ -2,19 +2,19 @@ package pl.ncms.moviere.movie.api
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
-import org.springframework.web.client.RestTemplate
 import pl.ncms.moviere.generated.api.MoviesApi
 import pl.ncms.moviere.generated.model.MovieDTO
-import pl.ncms.moviere.movie.Movie
 import pl.ncms.moviere.movie.dao.MovieDAO
+import pl.ncms.moviere.movie.domain.RatingService
+import pl.ncms.moviere.recomendation.RecommendationEngine
 import pl.ncms.moviere.recomendation.RecommendationEngineApi
-import pl.ncms.moviere.recomendation.RecommendationEngineClient
 
 @RestController
 class MoviesApiController : MoviesApi {
 
     private val movieDao = MovieDAO.provide()
-    private val recommendationApi = RecommendationEngineApi.provide()
+    private val recommendationApi = RecommendationEngine.provide()
+    private val ratingService = RatingService.provide()
 
     override fun getMovies(name: String?): ResponseEntity<List<MovieDTO>> {
         val movies: List<MovieDTO> = if (name == null) {
@@ -31,9 +31,10 @@ class MoviesApiController : MoviesApi {
             return ResponseEntity.badRequest().build()
         }
 
-        return ResponseEntity.ok(
-            recommendationApi.getRecommendations(movieDTO)
-        )
+        ratingService.saveRatings(movieDTO.map {movieDao.get(it.id) ?: throw NoSuchElementException()})
+        val recommendedMovies = recommendationApi.recommend(movieDTO)
+
+        return ResponseEntity.ok(recommendedMovies)
     }
 
 }
