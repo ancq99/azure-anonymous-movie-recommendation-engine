@@ -16,6 +16,9 @@ Załadopwać go do notatnika i przejść od razu do rejestracji.
 W MLStudio tworzymy nowy ASK. 
 
 ![askcompute](https://user-images.githubusercontent.com/57688356/210434701-50b86d27-6cfc-4edc-b96b-c2b4e6869f42.png)
+
+Wybieramy maszyne.
+
 ![endpoint_azure](https://user-images.githubusercontent.com/57688356/210434264-c03b3b8f-4c83-4cc9-8d9f-10c0b28d7fd5.png)
 
 
