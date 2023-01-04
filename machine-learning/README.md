@@ -40,13 +40,13 @@ Once the implementation is complete, we can find the details of the endpoint in 
 
 
 # Update models 
-Python modules [update_model.py](machine-learning/schedulejob/update_model.py) creates a model that stores in blob storage and endpoint (machine-learning/endpoint/score.py) downloads the latest model file once a day.
+Python modules [update_model.py](machine-learning/schedulejob/update_model.py) creates a model that stores in blob storage and endpoint [score.py](machine-learning/endpoint/score.py) downloads the latest model file once a day.
 
 # Create schedule job for update model 
 
 
 Use data factory to create a schedule job 
-according to the tutorial (https://learn.microsoft.com/en-us/azure/batch/tutorial-run-python-batch-azure-data-factory)
+according to the tutorial (https://learn.microsoft.com/en-us/azure/batch/tutorial-run-python-batch-azure-data-factory).
 Load python module update_modeles.py in data factory job and create schedule trigger once a day.
 
 
