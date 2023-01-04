@@ -31,8 +31,15 @@ Select Deploy Web Service, fill in the fields (Entry Script -> azure/score.py, C
 ![obraz](https://user-images.githubusercontent.com/66008982/202914394-9d21d227-525b-4685-b958-e969064b12b2.png)
 
 
+
 Once the implementation is complete, we can find the details of the endpoint in the Endpoints tab. 
 
 # Example of data
 * Input - movies we like in the format -> ["title1", "title2", "title3", ...].
 * Output - recommended movies for titles in the format -> ["title1", "title2", "title3", ...].K
+
+
+# Endpoint has been updated:
+- Downloading a new model once a day 
+- Endpoint does not connect to the database, using only the model file (saving endpoint memory so saving money ) 
+- Endpoint works faster
