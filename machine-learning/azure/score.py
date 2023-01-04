@@ -57,7 +57,6 @@ def get_movie_recommendation(title, n_movies_to_recommend=10):
 
 def run(data):
     data = json.loads(data)
-    print(data)
     recc = get_movie_recommendation(data, 10)
     return json.dumps(recc)
 
