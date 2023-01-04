@@ -40,7 +40,7 @@ Once the implementation is complete, we can find the details of the endpoint in 
 
 
 # Update models 
-Python modules machine-learning/schedulejob/update_model.py creates a model that stores in blob storage and endpoint (machine-learning/endpoint/score.py) downloads the latest model file once a day.
+Python modules [update_model.py](machine-learning/schedulejob/update_model.py) creates a model that stores in blob storage and endpoint (machine-learning/endpoint/score.py) downloads the latest model file once a day.
 
 # Create schedule job for update model 
 
