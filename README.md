@@ -5,6 +5,8 @@ Prosta aplikacja webowa do rekomendacji filmów.
 * [Bartłomiej Anczok](https://github.com/ancq99)
 * [Kamil Wójcik](https://github.com/Harry29-exe)
 * [Andrzej Czechowski](https://github.com/czechoa)
+* [Lidia Łachman](https://github.com/LidiaLachman)
+
 
 # Opis działania projektu
 Użytkownik podaje filmy, które mu się podobają, a następnie strona zwraca przynajmniej 10 propozycji filmów do obejrzenia.
