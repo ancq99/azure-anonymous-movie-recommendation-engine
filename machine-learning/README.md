@@ -39,7 +39,21 @@ Once the implementation is complete, we can find the details of the endpoint in 
 * Output - recommended movies for titles in the format -> ["title1", "title2", "title3", ...].K
 
 
+# Update models 
+Python modules machine-learning/schedulejob/update_model.py creates a model that stores in blob storage and endpoint (machine-learning/endpoint/score.py) downloads the latest model file once a day.
+
+# Create schedule job for update model 
+
+
+Use data factory to create a schedule job 
+according to the tutorial (https://learn.microsoft.com/en-us/azure/batch/tutorial-run-python-batch-azure-data-factory)
+Load python module update_modeles.py in data factory job and create schedule trigger once a day.
+
+
 # Endpoint has been updated:
 - Downloading a new model once a day 
 - Endpoint does not connect to the database, using only the model file (saving endpoint memory so saving money ) 
 - Endpoint works faster
+
+
+

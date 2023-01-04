@@ -43,7 +43,7 @@ from movies as mv
 
 def select_data_from_db():
 
-    conn = psycopg2.connect("host=movie-warehouse.postgres.database.azure.com port=5432 dbname=warehouse user=read_data_user password=zaq1@WSX sslmode=require")
+    conn = psycopg2.connect("host=movie-warehouse.postgres.database.endpoint.com port=5432 dbname=warehouse user=read_data_user password=zaq1@WSX sslmode=require")
 
     data_org = pd.read_sql(query_sql, conn)
 
