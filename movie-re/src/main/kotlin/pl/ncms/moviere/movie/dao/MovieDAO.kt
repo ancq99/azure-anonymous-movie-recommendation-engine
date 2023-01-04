@@ -18,6 +18,10 @@ interface MovieDAO : CrudDAO<Movie, Int> {
         }
     }
 
+    fun getAllPageable(page: Int, itemPerPage: Int): List<Movie>
+
+    fun getStd(id: Int): Movie?
+
     fun findByTitleLike(title: String): List<Movie>
 
     fun findByTitle(title: String): List<Movie>
@@ -49,11 +53,26 @@ class StdMovieDao : MovieDAO {
         Movies.selectAll().map { mapToObj(it) }
     }
 
+    override fun getAllPageable(page: Int, itemPerPage: Int): List<Movie> = transaction {
+        Movies.selectAll()
+            .limit(itemPerPage, (page * itemPerPage).toLong())
+            .map { mapToObj(it) }
+    }
+
     override fun get(id: Int): Movie? = transaction {
-        val row = Movies.select(
+        val row = Movies.select {
+            (Movies.id eq id)
+        }
+            .singleOrNull()
+
+        row?.let { mapToObj(it) }
+    }
+
+    override fun getStd(id: Int): Movie? = transaction {
+        val row = Movies.select {
             (Movies.id eq id) and
-                    (Movies.numOfVotes greater 150)
-        )
+            (Movies.numOfVotes greater 150)
+        }
             .singleOrNull()
 
         row?.let { mapToObj(it) }
@@ -61,10 +80,10 @@ class StdMovieDao : MovieDAO {
 
     override fun findByTitleLike(title: String): List<Movie> = transaction {
         val titleLike = title.uppercase(Locale.getDefault())
-        Movies.select(
-            UpperCase(Movies.title) like "%${titleLike}%"
-                    and (Movies.numOfVotes greater 150)
-        )
+        Movies.select {
+            (UpperCase(Movies.title) like "%${titleLike}%") and
+            (Movies.numOfVotes greater 150)
+        }
             .map { mapToObj(it) }
     }
 
