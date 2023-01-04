@@ -4,7 +4,8 @@ W celu odtworzenia rozwiązania w Azure, mamy dwie możliwości:
 
  * skonfigurowanie i uruchomienia pakietu SSIS (niezalecne)
  * wykorzystanie pliku dump, zaweirającego gotową baze
-
+ * wyklorzystnie ADF, opis w filmie 
+ 
 ### Użycie pliku dump
 
 Plik z dump'em bazy znajduje się tutaj: [dump](https://drive.google.com/file/d/1vgSqVK6JPomM9fUf5Pggo_XdlSYpowXU/view?usp=share_link).
