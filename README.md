@@ -22,7 +22,7 @@ Użytkownik podaje filmy, które mu się podobają, a następnie strona zwraca p
 
 
 # Diagram
-![diagram](https://user-images.githubusercontent.com/66008982/210626950-01f4c642-5600-477b-8acc-e4d4c726be78.svg)
+![diagram](https://user-images.githubusercontent.com/66008982/210627251-8cafad6a-66e7-49f7-944b-7a571f00c6e7.png)
 
 # Opis projektu
 Projektu składał się z trzech części:
