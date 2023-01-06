@@ -21,7 +21,8 @@ pg_restore -v --no-owner --host=mydemoserver.postgres.database.azure.com --port=
 
 # Schemat i opis bazy
 
-![db_schema](https://scontent-vie1-1.xx.fbcdn.net/v/t1.15752-9/315428876_1366374047435265_279832260848475403_n.png?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_ohc=pPcxIHDVdjIAX8XVxSz&_nc_ht=scontent-vie1-1.xx&oh=03_AdSuyrEqKeRNdX3hJ6Bn6NK1qxX7ma4XjdNhZOXs1xUd5A&oe=639F984C)
+![diagram_db](https://user-images.githubusercontent.com/66008982/211031682-d5e2ae9c-dddb-483c-8193-432b43c5d68b.png)
+
 
 W bazie znajduje się:
 * ponad 27 minlionów ocen
