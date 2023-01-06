@@ -21,7 +21,8 @@ pg_restore -v --no-owner --host=mydemoserver.postgres.database.azure.com --port=
 
 # Schemat i opis bazy
 
-![diagram_db](https://user-images.githubusercontent.com/66008982/211031682-d5e2ae9c-dddb-483c-8193-432b43c5d68b.png)
+
+![diagram_db](https://user-images.githubusercontent.com/66008982/211031793-a02e533e-8037-4760-a8df-8d98a2826826.png)
 
 
 W bazie znajduje się:
