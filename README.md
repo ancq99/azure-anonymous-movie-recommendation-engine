@@ -12,8 +12,8 @@ Prosta aplikacja webowa do rekomendacji filmów.
 Użytkownik podaje filmy, które mu się podobają, a następnie strona zwraca przynajmniej 10 propozycji filmów do obejrzenia.
 
 # Link do przykładu
-[Filmik prezentujący](https://www.youtube.com/watch?v=BDy3EB7fzNY)
-
+[Filmik prezentujący działanie](https://www.youtube.com/watch?v=BDy3EB7fzNY)
+[Poradnik jak odtworzyć projekt](https://www.youtube.com/watch?v=dvQsflhWTao)
 
 # Opis funkcjonalności
 - Prosta, szybka aplikacja webowa bez logowania.
