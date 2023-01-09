@@ -13,6 +13,7 @@ Użytkownik podaje filmy, które mu się podobają, a następnie strona zwraca p
 
 # Link do przykładu
 [Filmik prezentujący działanie](https://www.youtube.com/watch?v=BDy3EB7fzNY)
+
 [Poradnik jak odtworzyć projekt](https://www.youtube.com/watch?v=dvQsflhWTao)
 
 # Opis funkcjonalności
